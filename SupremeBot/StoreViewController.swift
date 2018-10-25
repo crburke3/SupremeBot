@@ -16,3 +16,19 @@ class StoreViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 }
+
+extension StoreViewController : UICollectionViewDataSource,UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) 
+        //cell.myLabel.text = "ABCD"
+        return cell;
+    }
+}
